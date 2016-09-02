@@ -1,5 +1,5 @@
 var add = function () {
-	var task = document.getElementById("task");
+	var task = document.getElementById("task").value;
 	var toDoList = getTodoList();
 	if (task != "") {
 		toDoList.push(task)
@@ -25,7 +25,7 @@ var showToDoList = function () {
 	var toDoList = getTodoList();
 	var html = "<ul>";
 
-	for (var i = 0; i < toDoList.length i + ) {
+	for (var i = 0; i < toDoList.length; i++) {
 		html += '<li>' + '<button class="remove" id="' + i + '">x</button>' + "  " + toDoList[i] + '</li>'
 	}
 
@@ -34,14 +34,14 @@ var showToDoList = function () {
 	document.getElementById('todos').innerHTML = html;
 
 	var buttons = document.getElementsByClassName("remove");
-	for (var i = 0; i < buttons; i++) {
+	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener('click', remove);
 	};
 };
 
 
 var getTodoList = function () {
-	//    var toDoList = new Array; //You can also write "new Array";
+    var toDoList = new Array; //You can also write "new Array";
 	var toDoList = [];
 	var toDoListString = localStorage.getItem("todo");
 	if (toDoListString != null) {
@@ -52,3 +52,31 @@ var getTodoList = function () {
 
 document.getElementById("add").addEventListener("click", add);
 showToDoList();
+
+///Other warmup exercise
+
+function factorialize(number){
+    var factoral=number
+    for(var i=number-1; i>1; i--){
+         factoral *= i
+//         console.log(factoral)
+    }
+    return factoral
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
